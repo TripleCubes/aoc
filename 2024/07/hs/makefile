@@ -1,2 +1,2 @@
 all:
-	ghc -Wno-tabs -o main.exe main.hs
+	ghc -Wno-tabs -O2 -o main.exe main.hs
