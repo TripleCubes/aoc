@@ -10,7 +10,9 @@ task0 path = do
 	input <- readFile path
 	let list = map read $ words input :: [Int64]
 	let times = 75
-	print $ snd $ blinkTimes (Map.fromList []) (times + 1) list
+	let result = blinkTimes (Map.fromList []) (times + 1) list
+	putStrLn $ "cache sz: " ++ (show $ length $ fst result)
+	print $ snd result
 
 type Cache = Map.Map (Int64, Int64) Int64
 
